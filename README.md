@@ -15,3 +15,4 @@ Er uppgift:
 2. ta fram vilka egenskaper och metoder klasserna behöver ha
 3. redogör för vilka parametrar och returvärden metoderna behöver
 
+TEST
