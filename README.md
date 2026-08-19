@@ -15,12 +15,11 @@ Er uppgift:
 2. ta fram vilka egenskaper och metoder klasserna behöver ha
 3. redogör för vilka parametrar och returvärden metoderna behöver
 
-1: 
-- En klass för ``Assignee``. Klassen skall innehålla Namn, Email, Telefonnummer, Adress, Kön, Tidigare Erfarenhet. 
-- En klass ``Expidition`` som innehåller location, duration, Available Participants, date, Spots.
+1, 2, 3: 
+- En klass för ``Customer``. Klassen skall innehålla Namn, Email, Telefonnummer, Adress, Kön, Tidigare Erfarenhet. 
+- En klass ``Expidition`` som innehåller pris, location, duration, Available Participants, date.
 - En klass ``Calender Schedule`` som visar tillgängliga expeditioner på året. Den hämtar ``Expidition`` för att kunden skall kunna se tillgängliga events baserat spots till varje event, Är ett event fullt försvinner den från listan. Den har en metod ``Search_by_location(location)`` som tillåter användare filtrera mellan event baserat på ``Expidition(location``)
-- En klass för registrering ``Registration`` som lagrar assignees som ``New_attendee`` och ``Expidition`` samt en function som tillåter avbokning ``Unregistered`` som tar bort Assignees från registration.
+- En klass för registrering ``Registration`` som lagrar ``Customer`` ``Expidition`` och ``Gear``, samt en function som tillåter avbokning ``Unbooking`` som tar bort customer från registration och frigör eventuell gear. Vid bokning sker frågan vilken customer som skall vara ``Leader``, bockas inte den i på någon nekas bokningen. Användaren kan bocka i om utrsutning behöver hyras.
 - En klass för ``Gear`` som har parametrar så som storlek och antal. Detta representerar utrustning, tex ``Flytväst``.
-- En klass ``Gear_inventory`` som lagrar ``Gear`` i ett förråd
-- En klass för ``Gear_Rental`` Användaren få uppge sin vikt, sedan tillåter klassen kunder att hyra utrustning. Klassen hämtar tillgänglig utrustning från ``Gear_inventory`` som finns för varje event på calendern. Om de bokas tas de bort ur listan på det datumet.
-- En klass för Betalning ``Payment``, denna skall innehålla en metod som checka om betalning har gjorts till en specifikt bokad expidition. , som true eller false.
+- En klass ``Gear_inventory`` som lagrar ``Gear`` i ett förråd. Om användaren bockat i att utrustning behöver hyras får de uppge sin vikt, sedan tillåter klassen kunder att hyra utrustning. Klassen hämtar tillgänglig utrustning från ``Gear_inventory`` som finns för varje event på calendern. Om de bokas tas de bort ur listan på det datumet.
+- En klass för Betalning ``Payment``, denna skall innehålla en metod ``Is_payed`` som checkar om total kostnad från Registration har slutförts. Denna returnar true eller False. Om betalning är = True så lagras betalningsuppgiftern i ``Payment``.
