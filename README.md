@@ -22,4 +22,7 @@ Er uppgift:
 - En klass för registrering ``Registration`` som lagrar ``Customer`` ``Expidition`` och ``Gear``, samt en function som tillåter avbokning ``Unbooking`` som tar bort customer från registration och frigör eventuell gear. Vid bokning sker frågan vilken customer som skall vara ``Leader``, bockas inte den i på någon nekas bokningen. Användaren kan bocka i om utrsutning behöver hyras.
 - En klass för ``Gear`` som har parametrar så som storlek och antal. Detta representerar utrustning, tex ``Flytväst``.
 - En klass ``Gear_inventory`` som lagrar ``Gear`` i ett förråd. Om användaren bockat i att utrustning behöver hyras får de uppge sin vikt, sedan tillåter klassen kunder att hyra utrustning. Klassen hämtar tillgänglig utrustning från ``Gear_inventory`` som finns för varje event på calendern. Om de bokas tas de bort ur listan på det datumet.
-- En klass för Betalning ``Payment``, denna skall innehålla en metod ``Is_payed`` som checkar om total kostnad från Registration har slutförts. Denna returnar true eller False. Om betalning är = True så lagras betalningsuppgiftern i ``Payment``.
+- En klass för Betalning ``Payment``, denna skall innehålla en metod ``Is_payed`` som checkar om total kostnad från Registration har slutförts. Denna returnar true eller False. Om betalning är = True så lagras betalningsuppgifterna i ``Payment``.
+
+# 2 Koda
+
