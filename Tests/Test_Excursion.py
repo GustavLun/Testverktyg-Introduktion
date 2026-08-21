@@ -33,4 +33,4 @@ def test_register_item_rented():
     ex.add_member(test_name)
     ex.rent_item(test_name, stav)
 
-    assert ex.rented_list.contains(test_name, stav)
+    assert ex.rent_dictionary[test_name] == stav.name
