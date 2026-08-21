@@ -22,3 +22,15 @@ def test_remove_member():
     ex.add_member(test_name)
     ex.remove_member(test_name)
     assert not ex.member_list.__contains__(test_name)
+
+def test_register_item_rented():
+    inv = Inventory()
+    stav = Item("Gå stavar", 50, 10)
+    inv.set_item(stav)
+
+    ex = Excursion()
+    test_name = "håkan"
+    ex.add_member(test_name)
+    ex.rent_item(test_name, stav)
+
+    assert ex.rented_list.contains(test_name, stav)

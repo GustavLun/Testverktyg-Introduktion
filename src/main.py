@@ -5,6 +5,7 @@ class Item:
         self.name = item_name
         self.price = price
         self.amount = amount
+        self.renters = []
 
 #Inventory
 class Inventory:
@@ -16,12 +17,13 @@ class Inventory:
 
 
 
-    def rent(self,item_name):
+    def rent(self,item_name, renter):
         for each in self.InventoryItems:
 
             if each.name == item_name:
                 if each.amount > 0:
                     each.amount -= 1
+                    each.renters.append(renter)
                     return True
 
         return False
@@ -39,6 +41,7 @@ class Inventory:
 class Excursion:
     def __init__(self):
         self.member_list = []
+        self.rent_dictionary = {"item": "renter"}
 
     def get_members(self):
         return self.member_list
@@ -58,5 +61,10 @@ class Excursion:
                 return True
             else:
                 return False
+
+
+    def rent_item(self, item_name, member_name):
+        self.rent_dictionary[member_name] = item_name
+
 
 
